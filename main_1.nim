@@ -5,8 +5,7 @@ var text = """Фонетическое значение буквы "ë" нево
 # Ниже произведите действия над переменной text
 text =  text.replace("е","ё")
 text = text.replace(". ",".\n")
-text = join(map(text.split('\n'), proc(x: string): string = x.reversed()),"\n")
-echo text
+text = join(mapIt(text.split('\n'),it.reversed()),"\n")
 
 # Не трогайте эту часть кода. Выводить text в консоль не обязательно.
 doAssert text == """.ьтинёцоёрёп онжомзовён "ë" ывкуб ёинёчанз ёоксёчитёноФ

@@ -4,8 +4,10 @@ import utils  # Рекомендуем ознакомиться для выпо�
 const RootDir = "folder"
 # Ниже реализуйте требуемую задачу
 var dirs, files, exts: seq[string]
-
-
+dirs = mapIt(getDirs(RootDir),it.replace(" ","_"))
+files = getFiles(RootDir)
+exts = mapIt(files,(it.split('.')[len(it.split('.')) - 1]))
+exts = map(exts,proc(el: string): string = join([".",el]))
 
 # Не изменяйте код ниже
 import sets
