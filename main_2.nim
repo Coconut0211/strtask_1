@@ -4,9 +4,9 @@ import utils  # Рекомендуем ознакомиться для выпо�
 const RootDir = "folder"
 # Ниже реализуйте требуемую задачу
 var dirs, files, exts: seq[string]
-
-
-
+dirs = mapIt(getDirs(RootDir),it.replace(" ","_"))
+files = getFiles(RootDir)
+exts = mapIt(files, it.splitFile()[2])
 # Не изменяйте код ниже
 import sets
 doAssert(
