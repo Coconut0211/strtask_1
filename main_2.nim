@@ -6,9 +6,7 @@ const RootDir = "folder"
 var dirs, files, exts: seq[string]
 dirs = mapIt(getDirs(RootDir),it.replace(" ","_"))
 files = getFiles(RootDir)
-exts = mapIt(files,(it.split('.')[len(it.split('.')) - 1]))
-exts = map(exts,proc(el: string): string = join([".",el]))
-
+exts = mapIt(files, it.splitFile()[2])
 # Не изменяйте код ниже
 import sets
 doAssert(
